@@ -1,0 +1,17 @@
+.hero{
+  text-align:center;
+  margin-top:20px;
+}
+
+.banner{
+  width:90%;
+  max-width:420px;
+  border-radius:20px;
+  box-shadow:0 0 20px #00f0ff, 0 0 40px #ff00f7;
+  animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+  from{ box-shadow:0 0 15px #00f0ff; }
+  to{ box-shadow:0 0 40px #ff00f7; }
+}

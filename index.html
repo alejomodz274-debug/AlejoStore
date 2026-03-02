@@ -1,0 +1,170 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALEJO STORE</title>
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    background:#050510;
+    font-family:Arial, Helvetica, sans-serif;
+    color: skyblue;
+    text-align:center;
+    overflow-x:hidden;
+}
+
+h1{
+    margin-top:30px;
+    font-size:45px;
+    letter-spacing:4px;
+}
+
+.subtitle{
+    font-size:18px;
+    color:#00f0ff;
+    margin-bottom:40px;
+}
+
+.container{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.card{
+    position:relative;
+    width:250px;
+    padding:30px;
+    border-radius:20px;
+    background:#111;
+    overflow:hidden;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    padding:2px;
+    border-radius:20px;
+    background:linear-gradient(45deg,#00f0ff,#00ff88,#00f0ff);
+    background-size:300% 300%;
+    animation: electric 4s linear infinite;
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+}
+
+@keyframes electric{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+h2{
+    margin-bottom:15px;
+}
+
+.price{
+    margin-top:15px;
+    font-size:18px;
+    color:#00ff88;
+    font-weight:bold;
+    line-height:1.6;
+}
+
+button{
+    margin-top:20px;
+    padding:12px 25px;
+    border:none;
+    border-radius:30px;
+    background:#00f0ff;
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 20px #00f0ff;
+}
+
+/* Partículas */
+.particle{
+    position:fixed;
+    width:6px;
+    height:6px;
+    background:#00f0ff;
+    border-radius:50%;
+    opacity:0.6;
+    animation: float linear infinite;
+}
+
+@keyframes float{
+    from{transform:translateY(100vh);}
+    to{transform:translateY(-10vh);}
+}
+</style>
+</head>
+
+<body>
+
+<h1>ALEJO STORE</h1>
+<div class="subtitle">VENTAS BR MODS — PRONTO MÁS PRODUCTOS...</div>
+
+<div class="container">
+
+    <div class="card">
+        <h2>br mods silent pc </h2>
+        <button onclick="window.open('https://wa.me/593984650566')">Comprar</button>
+        <div class="price">
+            1 Día: $3<br>
+            7 Días: $15<br>
+            15 Días: $20<br>
+            30 Días: $30
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>br mods root mobile </h2>
+        <button onclick="window.open('https://wa.me/593984650566')">Comprar</button>
+        <div class="price">
+            1 Día: $3<br>
+            7 Días: $15<br>
+            15 Días: $20<br>
+            30 Días: $30
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>br mods bypass y silent pc</h2>
+        <button onclick="window.open('https://wa.me/593984650566')">Comprar</button>
+        <div class="price">
+            1 Día: $3<br>
+            7 Días: $15<br>
+            15 Días: $20<br>
+            30 Días: $30
+        </div>
+    </div>
+
+</div>
+
+<script>
+for(let i=0;i<50;i++){
+    let particle=document.createElement("div");
+    particle.classList.add("particle");
+    particle.style.left=Math.random()*100+"vw";
+    particle.style.animationDuration=(5+Math.random()*10)+"s";
+    particle.style.animationDelay=Math.random()*5+"s";
+    document.body.appendChild(particle);
+}
+</script>
+
+</body>
+</html>
